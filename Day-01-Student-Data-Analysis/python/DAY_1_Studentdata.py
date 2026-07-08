@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-df = pd.read_csv("student-mat.csv", sep=";")
+df = pd.read_csv("dataset/student-mat.csv", sep=";")
 
 print("First Rows:")
 print(df.head())

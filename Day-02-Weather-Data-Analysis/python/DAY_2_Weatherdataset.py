@@ -178,7 +178,7 @@ print("Records where Weather Condition is Clear and Relative Humidity is above 5
 print(clear_humidity_visibility_data.head(50).to_string(index=False))  # Displaying only the first 50 records for brevity
 """
 
-
+#1. Weather Conditions Count (Bar Chart)
 weather_counts = data['Weather Condition'].value_counts()
 
 plt.figure(figsize=(12,6))
@@ -192,6 +192,7 @@ plt.tight_layout()
 plt.show()
 
 #--------------------------------------------------------------
+#2. Wind Speed Distribution (Histogram)
 plt.figure(figsize=(8,5))
 
 plt.hist(data['Wind Speed_km/h'], bins=20)
@@ -203,6 +204,7 @@ plt.ylabel("Frequency")
 plt.show()
 
 #--------------------------------------------------------------
+#3. Visibility Distribution
 plt.figure(figsize=(8,5))
 
 plt.hist(data['Visibility_km'], bins=15)
@@ -214,6 +216,7 @@ plt.ylabel("Frequency")
 plt.show()
 
 #--------------------------------------------------------------
+#4. Temperature vs Humidity (Scatter Plot)
 plt.figure(figsize=(8,6))
 
 plt.scatter(data['Temp_C'], data['Rel Hum_%'])
@@ -225,6 +228,7 @@ plt.ylabel("Relative Humidity (%)")
 plt.show()
 
 #--------------------------------------------------------------
+#5. Mean Temperature of Every Weather Condition
 mean_temp = data.groupby('Weather Condition')['Temp_C'].mean()
 
 plt.figure(figsize=(12,6))
@@ -240,6 +244,7 @@ plt.tight_layout()
 
 plt.show()
 #--------------------------------------------------------------
+#6. Mean Visibility of Every Weather Condition
 mean_visibility = data.groupby('Weather Condition')['Visibility_km'].mean()
 
 plt.figure(figsize=(12,6))
@@ -255,6 +260,7 @@ plt.tight_layout()
 
 plt.show()
 #--------------------------------------------------------------
+#7. Mean Wind Speed for Every Weather Condition
 mean_wind = data.groupby('Weather Condition')['Wind Speed_km/h'].mean()
 
 plt.figure(figsize=(12,6))
@@ -270,6 +276,7 @@ plt.tight_layout()
 
 plt.show()
 #--------------------------------------------------------------
+#8. Pressure Distribution
 plt.figure(figsize=(8,5))
 
 plt.hist(data['Press_kPa'], bins=20)
@@ -280,6 +287,7 @@ plt.ylabel("Frequency")
 
 plt.show()
 #--------------------------------------------------------------
+#9. Weather Condition Pie Chart
 weather_counts = data['Weather Condition'].value_counts().head(8)
 
 plt.figure(figsize=(8,8))
@@ -292,18 +300,7 @@ plt.title("Top 8 Weather Conditions")
 
 plt.show()
 #--------------------------------------------------------------
-weather_counts = data['Weather Condition'].value_counts().head(8)
-
-plt.figure(figsize=(8,8))
-
-plt.pie(weather_counts,
-        labels=weather_counts.index,
-        autopct='%1.1f%%')
-
-plt.title("Top 8 Weather Conditions")
-
-plt.show()
-#--------------------------------------------------------------
+#10. Correlation Heatmap (Most Important)
 import matplotlib.pyplot as plt
 
 corr = data.corr(numeric_only=True)
@@ -323,6 +320,7 @@ plt.tight_layout()
 
 plt.show()
 #--------------------------------------------------------------
+#11. Wind Speed vs Visibility
 plt.figure(figsize=(8,6))
 
 plt.scatter(data['Wind Speed_km/h'],
@@ -334,6 +332,7 @@ plt.ylabel("Visibility")
 
 plt.show()
 #--------------------------------------------------------------
+#12. Temperature Distribution
 plt.figure(figsize=(8,5))
 
 plt.hist(data['Temp_C'], bins=20)
@@ -344,6 +343,7 @@ plt.ylabel("Frequency")
 
 plt.show()
 #--------------------------------------------------------------
+#13. Relative Humidity Distribution
 plt.figure(figsize=(8,5))
 
 plt.hist(data['Rel Hum_%'], bins=15)
@@ -354,6 +354,7 @@ plt.ylabel("Frequency")
 
 plt.show()
 #--------------------------------------------------------------
+#14. Top 10 Highest Wind Speeds
 top10 = data.nlargest(10, 'Wind Speed_km/h')
 
 plt.figure(figsize=(10,5))
@@ -367,6 +368,7 @@ plt.ylabel("Wind Speed")
 
 plt.show()
 #--------------------------------------------------------------
+#15. Mean Values of All Numeric Columns
 means = data.mean(numeric_only=True)
 
 plt.figure(figsize=(8,5))
@@ -378,3 +380,4 @@ plt.title("Mean of Numeric Columns")
 plt.xticks(rotation=45)
 
 plt.show()
+#------------------------------------------------------

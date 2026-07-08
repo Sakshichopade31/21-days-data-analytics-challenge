@@ -34,7 +34,7 @@ This repository documents my journey of completing **21 hands-on Data Analytics 
 | --- | ---------------------------- | :----: |
 | 01  | Student Data Analysis        |    ✅   |
 | 02  | Weather Data Analysis        |    ✅   |
-| 03  | Coming Soon                  |    ⏳   |
+| 03  | Online Retail Sales Aanlysis |    ✅   |
 | 04  | Coming Soon                  |    ⏳   |
 | 05  | Coming Soon                  |    ⏳   |
 | 06  | Coming Soon                  |    ⏳   |
